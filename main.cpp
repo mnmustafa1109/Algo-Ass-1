@@ -20,7 +20,7 @@ int main()
     Sorter sorter(passengers);
     std::vector<Passenger> sortedPassengers = sorter.sortAndMeasureTime(sortType, size);
     
-    std::string fileName = sortType + "-" + std::to_string(size) + ".csv";
+    std::string fileName = "./output/" +sortType + "-" + std::to_string(size) + ".csv";
     parser.writeCSV(fileName, sortedPassengers);
 
     return 0;
