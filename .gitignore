@@ -1,16 +1,3 @@
 build
-insertionsort-10.csv
-insertionsort-25.csv
-insertionsort-50.csv
-insertionsort-100.csv
-insertionsort-250.csv
-insertionsort-500.csv
-insertionsort-1000.csv
-insertionsort-2500.csv
-insertionsort-5000.csv
-insertionsort-10000.csv
-insertionsort-25000.csv
-main.exe
-insertionsort-50000.csv
 cmake-build-debug
 output

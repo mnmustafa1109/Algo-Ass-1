@@ -8,7 +8,7 @@ int main()
 {
 
     // selectionsort, insertionsort, mergesort, quicksort
-    std::string sortType = "insertionsort";
+    std::string sortType = "mergesort";
 
     // max size = 98620
     // 10,25,50,100,250,500,1000,2500,5000,10000,25000,50000,98620
@@ -23,7 +23,7 @@ int main()
     Sorter sorter(passengers);
     std::vector<Passenger> sortedPassengers = sorter.sortAndMeasureTime(sortType, size);
     
-    std::string fileName = "./output/" +sortType + "-" + std::to_string(size) + ".csv";
+    std::string fileName = "../output/" +sortType + "-" + std::to_string(size) + ".csv";
     parser.writeCSV(fileName, sortedPassengers);
 }
 
