@@ -90,7 +90,17 @@ std::vector<Passenger> Sorter::selectionsort(std::vector<Passenger> &passengers)
 }
 
 std::vector<Passenger> Sorter::insertionsort(std::vector<Passenger> &passengers) {
-    
+    int n = passengers.size();
+    for (int i = 1; i < n; ++i) {
+        Passenger key = passengers[i];
+        int j = i - 1;
+
+        while (j >= 0 && passengers[j].getId() > key.getId()) {
+            passengers[j + 1] = passengers[j];
+            j = j - 1;
+        }
+        passengers[j + 1] = key;
+    }
     return passengers;
 }
 
