@@ -2,28 +2,49 @@
 #include "Passenger.hxx"
 #include <vector>
 
+// This function partitions the vector of Passengers by selecting a pivot element
+// and rearranging the elements in such a way that elements smaller than the pivot
+// are on the left, and elements greater than or equal to the pivot are on the right.
 int partition(std::vector<Passenger> &passengers, int left, int right) {
+    // Select the pivot element. In this case, it's the ID of the passenger at 'right'.
     std::string pivot = passengers[right].getId();
+    // Initialize the index 'i' to the left of the subarray.
     int i = left - 1;
 
+    // Iterate through the subarray from 'left' to 'right - 1'.
     for (int j = left; j < right; j++) {
+        // Compare the ID of the passenger at index 'j' with the pivot.
         if (passengers[j].getId() < pivot) {
+            // If the ID is smaller than the pivot, increment 'i'.
             i++;
+            // Swap the passenger at 'i' with the passenger at 'j'.
             std::swap(passengers[i], passengers[j]);
         }
     }
 
+    // Finally, swap the pivot element with the element at index 'i + 1'.
     std::swap(passengers[i + 1], passengers[right]);
+    // Return the index of the pivot element after partitioning.
     return i + 1;
 }
 
+// This is the main Quick Sort function that sorts the vector of Passengers.
 void quick_sort(std::vector<Passenger> &passengers, int left, int right) {
+    // If the 'left' index is less than the 'right' index, there are elements to sort.
     if (left < right) {
+        // Partition the array and get the index of the pivot element.
         int pivotIndex = partition(passengers, left, right);
+        // Recursively sort the subarray to the left of the pivot.
         quick_sort(passengers, left, pivotIndex - 1);
+        // Recursively sort the subarray to the right of the pivot.
         quick_sort(passengers, pivotIndex + 1, right);
     }
 }
+
+// The quick_sort function is typically called with 'left' as 0 and 'right' as the
+// last index of the vector to sort the entire vector. It uses the partition function
+// to divide and conquer the elements in the vector, ultimately sorting them.
+
 
 //! MERGE SORT
 
