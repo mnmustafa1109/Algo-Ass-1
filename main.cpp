@@ -4,6 +4,7 @@
 #include "Passenger.hxx"
 #include "Sorter.hxx"
 #include "MaxHeap.hxx"
+#include "MinHeap.hxx"
 
 int main()
 {
@@ -53,6 +54,20 @@ int main()
     // save to file for testing
     std::string fileName = "../output/heapsize-" + std::to_string(passengerQueue.getSize()) + ".csv";
     parser.writeCSV(fileName, passengerQueue.getHeap());
+
+    MinPriorityQueue minPassengerQueue(passengers);
+
+    // std::string newPriority = "zzzzzzzzzzzz"; // Define the new priority key
+    // passengerQueue.increaseKey(0, newPriority);
+
+    std::cout << "Min priority queue:" << std::endl;
+    std::cout << "------------------" << std::endl;
+    std::cout << "Passenger with the minimum ID: " << passengerQueue.heapExtractMax().getId() << std::endl;
+    std::cout << "Passenger with the second minimum ID: " << passengerQueue.heapExtractMax().getId() << std::endl;
+
+    // save to file for testing
+    std::string fileNameMin = "../output/heapsize-" + std::to_string(passengerQueue.getSize()) + ".csv";
+    parser.writeCSV(fileNameMin, passengerQueue.getHeap());
 
     return 0;
 }
