@@ -111,4 +111,18 @@ public:
 
         return heap[0];
     }
+    
+    // get the size of the heap
+
+    int getSize()
+    {
+        return heap.size();
+    }
+
+    // get the heap
+
+    std::vector<Passenger> getHeap()
+    {
+        return heap;
+    }
 };

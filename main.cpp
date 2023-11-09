@@ -48,6 +48,11 @@ int main()
     std::cout << "Max priority queue:" << std::endl;
     std::cout << "------------------" << std::endl;
     std::cout << "Passenger with the highest ID: " << passengerQueue.heapExtractMax().getId() << std::endl;
+    std::cout << "Passenger with the second highest ID: " << passengerQueue.heapExtractMax().getId() << std::endl;
+
+    // save to file for testing
+    std::string fileName = "../output/heapsize-" + std::to_string(passengerQueue.getSize()) + ".csv";
+    parser.writeCSV(fileName, passengerQueue.getHeap());
 
     return 0;
 }
