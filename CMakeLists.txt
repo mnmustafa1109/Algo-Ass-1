@@ -11,7 +11,7 @@ add_custom_target(copy_data_directory
 )
 
 # Add your executable and make it depend on the custom target
-add_executable(Algo_Ass_1 main.cpp Sorter.cxx Passenger.hxx Parser.hxx Sorter.hxx)
+add_executable(Algo_Ass_1 main.cpp Sorter.cxx Passenger.hxx Parser.hxx Sorter.hxx MaxHeap.hxx)
 
 # Make the executable depend on the custom target, so data folder is copied before building the executable
 add_dependencies(Algo_Ass_1 copy_data_directory)
